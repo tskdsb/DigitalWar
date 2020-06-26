@@ -6,7 +6,7 @@ import (
 
 func TestGCD(t *testing.T) {
 	list := []struct {
-		a, b, c int
+		a, b, c uint
 	}{
 		{105, 252, 21},
 		{120, 60, 60},

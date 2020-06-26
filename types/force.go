@@ -7,3 +7,8 @@ import (
 type Force struct {
 	Color color.Color
 }
+
+type Team struct {
+	member *Fraction
+	block  *Block
+}

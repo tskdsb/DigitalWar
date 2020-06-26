@@ -5,14 +5,20 @@ import (
 )
 
 type Fraction struct {
-	fenzi int
-	fenmu int
+	fenzi uint
+	fenmu uint
 }
 
-func NewFraction(a int) *Fraction {
+func NewFraction(a uint) *Fraction {
 	return &Fraction{
 		fenzi: a,
 		fenmu: 1,
+	}
+}
+func NewFraction2(a, b uint) *Fraction {
+	return &Fraction{
+		fenzi: a,
+		fenmu: b,
 	}
 }
 
@@ -34,4 +40,12 @@ func (f *Fraction) YueFen() {
 	gcd := utils.GCD(f.fenzi, f.fenmu)
 	f.fenzi = f.fenzi / gcd
 	f.fenmu = f.fenmu / gcd
+}
+
+func (f *Fraction) IsZero() bool {
+	return f.fenzi == 0
+}
+
+func Fight(f1, f2 *Fraction) {
+	f1.Sub(*f2)
 }

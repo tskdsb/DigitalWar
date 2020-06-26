@@ -1,7 +1,10 @@
 package utils
 
 // Greatest common divisor
-func GCD(a, b int) int {
+func GCD(a, b uint) uint {
+	if a == b {
+		return 1
+	}
 	for {
 		if a == 0 {
 			return b
@@ -16,4 +19,12 @@ func GCD(a, b int) int {
 			b = b - a
 		}
 	}
+}
+
+func Abs(a int) int {
+	if a < 0 {
+		return -a
+	}
+
+	return a
 }
